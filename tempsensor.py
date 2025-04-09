@@ -9,8 +9,8 @@ def main():
     hmdaddress = 0x01
 
     while (True):
-        portA = i2cbus.read_byte_data(i2caddress, tempaddress);
-        portB = i2caddress.read_byte_data(i2caddress,hmdaddress);
+        portA = i2cbus.read_word_data(i2caddress, tempaddress);
+        portB = i2caddress.read_word_data(i2caddress,hmdaddress);
 
         print(portA);
         print(portB);
