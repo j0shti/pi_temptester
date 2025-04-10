@@ -15,13 +15,16 @@ def main():
         i2cbus.write_byte(i2caddress, 0x00) 
         time.sleep(0.3)
         
-        portA1 = i2cbus.read_byte(i2caddress, tempaddress)
-        portA2 = i2cbus.read_byte(i2caddress, tempaddress)
+        portA1 = i2cbus.read_byte(i2caddress)
+        portA2 = i2cbus.read_byte(i2caddress)
 
         time.sleep(0.3)
 
-        portB1 = i2cbus.read_byte(i2caddress,hmdaddress)
-        portB2 = i2cbus.read_byte(i2caddress,hmdaddress)
+        i2cbus.write_byte(i2caddress, 0x01) 
+        time.sleep(0.3)
+
+        portB1 = i2cbus.read_byte(i2caddress)
+        portB2 = i2cbus.read_byte(i2caddress)
 
         tempData = portA1 << 8 | portA2
         humidityData = PortB1 << 8 | portB2
