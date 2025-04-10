@@ -10,7 +10,7 @@ def main():
 
     while (True):
         portA = i2cbus.read_word_data(i2caddress, tempaddress);
-        portB = i2caddress.read_word_data(i2caddress,hmdaddress);
+        portB = i2cbus.read_word_data(i2caddress,hmdaddress);
 
         print(portA);
         print(portB);
