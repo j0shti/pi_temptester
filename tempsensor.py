@@ -27,7 +27,7 @@ def main():
         portB2 = i2cbus.read_byte(i2caddress)
 
         tempData = portA1 << 8 | portA2
-        humidityData = PortB1 << 8 | portB2
+        humidityData = portB1 << 8 | portB2
 
         temp = (tempData * 165 / 65535.0) - 40.0
         hum = (humidityData / 65535.0) - 40.0
