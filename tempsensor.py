@@ -36,5 +36,8 @@ def main():
         print(f'hum(%RH): {hum}')
         time.sleep(1)
 
+        if temp > 25:
+            print("STOP")
+
 if __name__ == "__main__":
     main()
