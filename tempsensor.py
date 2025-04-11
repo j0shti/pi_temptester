@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import smbus
 import time
+import os
 
 def main():
     i2cbus = smbus.SMBus(1)
@@ -36,8 +37,9 @@ def main():
         print(f'hum(%RH): {hum}')
         time.sleep(1)
 
-        if temp > 25:
-            print("STOP")
+        if temp > 27:
+            print('rebooting')
+            os.system('sudo reboot')
 
 if __name__ == "__main__":
     main()
