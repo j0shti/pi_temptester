@@ -38,8 +38,8 @@ def main():
         time.sleep(1)
 
         if temp > 27:
-            print('rebooting')
-            os.system('sudo reboot')
+            print('temp too high -- rebooting')
+            # os.system('sudo reboot')
 
 if __name__ == "__main__":
     main()
