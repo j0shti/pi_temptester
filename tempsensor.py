@@ -8,8 +8,6 @@ def main():
 
 
     i2caddress = 0x40
-    tempaddress = 0x00
-    hmdaddress = 0x01
 
     
     while (True):
@@ -31,7 +29,7 @@ def main():
         humidityData = portB1 << 8 | portB2
 
         temp = (tempData * 165 / 65535.0) - 40.0
-        hum = (humidityData / 65535.0) - 40.0
+        hum = (humidityData / 65535.0)
 
         print(f'temp(C): {temp}')
         print(f'hum(%RH): {hum}')
